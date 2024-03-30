@@ -1,5 +1,5 @@
 from flask import Flask
-from extensions import db
+from extensions import db, migrate
 
 
 def create_app():
@@ -9,6 +9,14 @@ def create_app():
 
     # Initialize Flask extensions
     db.init_app(app)
+    migrate.init_app(app, db)
+
+    # Flask application context
+    with app.app_context():
+        # Import models
+        from auth.models import Users
+
+        db.create_all()
 
     # Import blueprints
     from auth import auth_bp
