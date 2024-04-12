@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html {% block html_attribs %}lang="en"{% endblock html_attribs %}>
+  <head>
+    {% block head %}
+
+    <!-- Required meta tags -->
+    {% block meta %}
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    {% endblock meta %}
+
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock styles %}
+
+    <title>{% block title %}title|default{% endblock title %}</title>
+    {% endblock head %}
+  </head>
+  <body {% block body_attribs %}{% endblock body_attribs %}>
+    <!-- Your page content -->
+    {% block navbar %}{% endblock navbar %}
+    {% block header %}{% endblock header %}
+    {% block content %}{% endblock content %}
+
+
+    {% block scripts %}
+    <!-- Optional JavaScript -->
+    {{ bootstrap.load_js() }} 
+    {% endblock scripts%}
+  </body>
+</html>
