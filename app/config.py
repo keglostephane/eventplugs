@@ -12,6 +12,8 @@ class Development(Config):
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = True
+    BOOTSTRAP_SERVE_LOCAL = True
+    BOOTSTRAP_BOOTSWATCH_THEME = 'pulse'
 
 
 class Testing(Config):
