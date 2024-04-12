@@ -1,7 +1,8 @@
 from . import auth_bp
+from flask import render_template
 
 
 @auth_bp.route('/', methods=["GET"])
 def index():
     """display index page"""
-    return "<h1>Hello World</h1>"
+    return render_template('index.html')
