@@ -1,0 +1,134 @@
+{% extends "base.html" %} 
+{% from 'bootstrap5/nav.html' import render_nav_item%}
+{% from 'bootstrap5/utils.html' import render_icon %} 
+
+{% block title %}EventPlugs{% endblock title %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-5">
+    <a class="navbar-brand fw-bolder" href="#">EventPlugs</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ms-auto">
+        <!-- replace links with flask render_nav_item -->
+        <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
+        <a class="nav-link fw-bold" href="#features">Features</a>
+        <a class="nav-link fw-bold" href="#about">About Us</a>
+        <a class="nav-link fw-bold" href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock navbar %} 
+
+{% block header %}
+<header class="bg-light py-5" style="min-height: 100vh;" id="cover">
+  <div class="container">
+    <div class="row gap-3 align-items-center">
+      <div class="col-lg-6 mb-5">
+        <h1 class="text-dark display-3 fw-bolder">Connect you to your local organizations retails and professionals</h1>
+      </div> 
+      <div class="col">
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex gap-3">
+            <p class="text-black align-self-center">{{ render_icon('geo', '3rem') }}</p>
+            <p class="text-black fw-bolder fs-3">Discover organizations retails, professionals near you and what services they provide.</p>
+          </div>
+          <div class="d-flex gap-3">
+            <p class="text-black align-self-center">{{ render_icon('bell', '3rem') }}</p>
+            <p class="text-black fw-bolder fs-3">Receive focused notifications based on your interests.</p>
+          </div>
+          <div class="d-flex gap-3">
+            <p class="text-black align-self-center">{{ render_icon('clock', '3rem') }}</p>
+            <p class="text-black fw-bolder fs-3">Save time and effort.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3 justify-content-center gap-3">
+      <div class="col-md-8 col-lg-4 col-xl-2">
+        <a class="btn btn-primary btn-lg d-block" href="#" role="button">Get Started</a>
+      </div>
+      <div class="col-md-8 col-lg-4 col-xl-2">
+        <a class="btn btn-success btn-lg d-block" href="#" role="button">Learn More</a>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock header %}
+
+{% block content %}
+<section class="bg-secondary py-5" id="features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3">{{ render_icon('map', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Access locations</h2>
+        <p class="text-dark fw-medium fs-3">Access geographical location of oragnizations, retails and professionals near you on an interactive map.</p>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3" >{{ render_icon('bookmark-heart', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Suscribe to contents</h2>
+        <p class="text-dark fw-medium fs-3">Suscribe to contents of your interests.</p>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3">{{ render_icon('broadcast-pin', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Publish contents</h2>
+        <p class="text-dark fw-medium fs-3">Create contents with specific topics and reach people.</p>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3">{{ render_icon('envelope-paper', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Instant notifications</h2>
+        <p class="text-dark fw-medium fs-3">Receive sms, email notifications once some new contents you suscribe to have been published.</p>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3">{{ render_icon('geo-alt', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Geospatial analysis</h2>
+        <p class="text-dark fw-medium fs-3">Visualize, Determine how many specific point of interests are near you. What is the closest from your current location.</p>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="text-dark text-center pb-3">{{render_icon('graph-up-arrow', '5rem') }}</div>
+        <h2 class="fw-bold text-dark text-center">Anylitics</h2>
+        <p class="text-dark fw-medium fs-3">Get insights from contents you have published or suscribed to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-warning py-5" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-dark display-5 fw-semibold mb-5">EventPlugs is a publish-subscribe platform that allow organizations, retails and professionals to share relevant contents with people.
+        </h2>
+        <p class="text-black fs-3">The project is bornt from the frustration to not get up-to-date relevant content from our local organizations and retails each time we need them. some of them have a websites but they are not always up to date. For whose who are on social media platforms, once you subscribe to them, it easy to get overwhelmed by contents they share but not always relevant to all people.</p>
+        <p class="text-black fs-3">So we think, it should be great to have a platform that allow people to find useful, specific, and updated information from their local organizations and retails thus saving them a lot of time and frustration. This will also help organizations, retails and customers build strong connections with their customers.</p>
+        <p class="text-black fs-3">We build this tool in the hope, it will be useful to you without any guarantees.</p>
+        <p class="text-black text-center fs-3 mt-5">Made with <span>{{render_icon('heart-fill', '2rem', 'red') }}</span>by <a class="link-dark fst-italic"href="https://github.com/keglostephane">keglostephane</a> and <a class="link-dark fst-italic" href="https://github.com/Chesterkxng">chesterkxng</a></p>
+        <div class="text-center"><a href="https://github.com/keglostephane/eventplugs" alt>{{ render_icon('github', '4rem', 'black') }}</a></div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark">
+  <div class="container">
+    <div class="row text-center">
+      <d class="col py-auto">
+        <p class="text-light fs-4 my-0 py-3">Copyright &copy; 2024 EventPlugs</p>
+      </d>
+    </div>
+  </div>
+</footer>
+{% endblock content %}
